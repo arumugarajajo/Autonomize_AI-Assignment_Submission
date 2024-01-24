@@ -1,0 +1,16 @@
+.repository-description-container {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+.repo-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.repo-description {
+  font-size: 18px;
+}

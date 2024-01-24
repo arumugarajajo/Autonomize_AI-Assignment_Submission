@@ -7,7 +7,6 @@ const User = require("../models/User");
 
 router.get("/checkDbConnection", async (req, res) => {
   try {
-    // Query the database or simply log the success
     console.log("Checking database connection...");
     res.json({ message: "Database connection is active" });
   } catch (error) {
@@ -91,7 +90,7 @@ router.delete("/:username", async (req, res) => {
   }
 });
 
-// Route 5: Update fields like “location”, “blog”, “bio”, etc., for a given user in the database
+// Route 5: Update fields
 router.put(
   "/update/:username",
   [
@@ -136,6 +135,11 @@ router.get("/getAllUsers/:sortField", async (req, res) => {
     console.error("Error:", error);
     res.status(500).send("Server Error");
   }
+});
+
+router.use((err, req, res, next) => {
+  console.error("Error:", err);
+  res.status(500).send("Server Error");
 });
 
 module.exports = router;
